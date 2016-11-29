@@ -1,0 +1,20 @@
+﻿<Page x:Class="Client.EditAd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Client"
+      mc:Ignorable="d" 
+      d:DesignHeight="505" d:DesignWidth="855"
+      Title="EditAd">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" MinHeight="200">
+            <Label Content="Tytuł:" Foreground="{StaticResource StaticTextBrush}" FontSize="20" FontWeight="Bold"/>
+            <TextBox Name="tbTitle" Text=""/>
+            <Label Content="Treść:" Foreground="{StaticResource StaticTextBrush}" FontSize="20" FontWeight="Bold"/>
+            <TextBox Name="tbDescription" Text="" Height="250" TextWrapping="Wrap" AcceptsReturn="True"/>
+            <Button Name="btnAccept" Content="Zatwierdź" FontSize="18" Margin="10,10,10,0" Click="btnAccept_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

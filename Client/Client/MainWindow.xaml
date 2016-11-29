@@ -1,0 +1,38 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="860" Height="600" 
+        Background="{StaticResource BackgroundBrush}" 
+        WindowStyle="None" 
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" 
+        BorderBrush="White" BorderThickness="1">
+    <Grid>
+        <StackPanel>
+            <Grid>
+                <StackPanel>
+                    <DockPanel Name="dpTitle" MouseDown="dpTitle_MouseDown">
+                        <Label Name="lblDateAndTime" Content="00.00.0000 00:00:00" FontWeight="Bold" Foreground="{StaticResource StaticTextBrush}" FontSize="16"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Name="btnMinimize" MinWidth="32" MinHeight="24" FontSize="18" Click="btnMinimize_Click">
+                                <TextBlock Text="_" Margin="0, -10, 0, 0"/>
+                            </Button>
+                            <Button Name="btnExit" Content="X" MinWidth="32" MinHeight="24" FontSize="12" Click="btnExit_Click"/>
+                        </StackPanel>
+                    </DockPanel>
+                    <StackPanel Name="spTab" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Name="btnBrowseAds" Style="{StaticResource Navi}" Content="Przeglądaj ogłoszenia" Click="btnBrowseAds_Click"/>
+                        <Button Name="btnAddAd" Style="{StaticResource Navi}" Content="Dodaj ogłoszenie" Click="btnAddAd_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <DockPanel>
+                <Frame Name="frmMain" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="855" MinHeight="505" NavigationUIVisibility="Hidden"/>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>

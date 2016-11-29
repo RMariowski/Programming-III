@@ -1,0 +1,104 @@
+﻿<Application x:Class="Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Client"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BackgroundColor">#2F2C38</Color>
+            <Color x:Key="ActiveColor">#F06060</Color>
+            <Color x:Key="ColumnColor">#373442</Color>
+            <Color x:Key="StaticTextColor">#F9F9F9</Color>
+            <Color x:Key="DynamicTextColor">#FFCB67</Color>
+            <Color x:Key="ColumnTextColor">#686474</Color>
+
+            <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
+            <SolidColorBrush x:Key="ActiveBrush" Color="{StaticResource ActiveColor}"/>
+            <SolidColorBrush x:Key="ColumnBrush" Color="{StaticResource ColumnColor}"/>
+            <SolidColorBrush x:Key="StaticTextBrush" Color="{StaticResource StaticTextColor}"/>
+            <SolidColorBrush x:Key="DynamicTextBrush" Color="{StaticResource DynamicTextColor}"/>
+            <SolidColorBrush x:Key="ColumnTextBrush" Color="{StaticResource ColumnTextColor}"/>
+
+            <Style TargetType="Button">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{StaticResource DynamicTextBrush}"/>
+                <Setter Property="MinWidth" Value="125"/>
+
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Foreground" Value="{StaticResource StaticTextBrush}"/>
+                        <Setter Property="Background" Value="{StaticResource ActiveBrush}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style TargetType="Button" x:Key="Navi">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{StaticResource DynamicTextBrush}"/>
+                <Setter Property="MinWidth" Value="148"/>
+                <Setter Property="MinHeight" Value="32"/>
+                <Setter Property="MaxWidth" Value="192"/>
+                <Setter Property="MaxHeight" Value="48"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Margin" Value="10,15,10,15"/>
+                
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Foreground" Value="{StaticResource StaticTextBrush}"/>
+                        <Setter Property="Background" Value="{StaticResource ActiveBrush}"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="false">
+                        <Setter Property="Foreground" Value="{StaticResource StaticTextBrush}"/>
+                        <Setter Property="Background" Value="{StaticResource ActiveBrush}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style TargetType="GridViewColumnHeader">
+                <Setter Property="Background" Value="{StaticResource ColumnBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource ColumnTextBrush}"/>
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+
+            <Style TargetType="{x:Type ListViewItem}">
+                <Setter Property="Height" Value="42"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ColumnTextBrush}"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true" >
+                        <Setter Property="Background" Value="{StaticResource ActiveBrush}"/>
+                        <Setter Property="Foreground" Value="{StaticResource DynamicTextBrush}"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Trigger>
+                    <Trigger Property="IsSelected" Value="true" >
+                        <Setter Property="Background" Value="{StaticResource ActiveBrush}"/>
+                        <Setter Property="Foreground" Value="{StaticResource DynamicTextBrush}"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

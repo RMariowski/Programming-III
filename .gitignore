@@ -1,0 +1,9 @@
+﻿*.suo
+/Client/Client/bin/Debug
+/Client/Client/obj/Debug
+/Server/Server/bin/Debug
+/Server/Server/obj/Debug
+/Client/Client/bin/Release
+/Client/Client/obj/Release
+/Server/Server/bin/Release
+/Server/Server/obj/Release
